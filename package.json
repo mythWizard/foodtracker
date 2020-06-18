@@ -7,7 +7,7 @@
   "repository": {
     "url": "git@github.com:mythWizard/foodtracker.git",
     "type": "git"
-  }
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "bcrypt": "^5.0.0",
@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf build && cd ../foodtracker/ && yarn build && cp -r build ../foodtracker-backend/"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
