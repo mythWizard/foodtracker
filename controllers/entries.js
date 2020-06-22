@@ -14,6 +14,7 @@ entryRouter.get('/', async (req, res) => {
 	const user = await User.findById(decodedToken.id)
 
 	const entries = await Entry.find({user: user.id}).populate('user', {username: 1})
+	console.log(entries)
 	res.json(entries)
 })
 
@@ -28,7 +29,7 @@ entryRouter.post('/', async (req, res) => {
 	const user = await User.findById(decodedToken.id)
 	const entry = new Entry({
 		user: user.id,
-		item: body.item,
+		name: body.name,
 		calories: body.calories,
 		carbs: body.carbs,
 		fiber: body.fiber,

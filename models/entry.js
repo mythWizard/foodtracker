@@ -3,7 +3,7 @@ mongoose.set('useFindAndModify', false)
 mongoose.set('useCreateIndex', true)
 
 const entrySchema = mongoose.Schema({
-	item: {
+	name: {
 		required: true,
 		type: String,
 	},
