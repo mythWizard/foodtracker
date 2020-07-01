@@ -19,6 +19,7 @@ searchRouter.post('/', async (req, res) => {
 	//const item = await axios.get(`https://trackapi.nutritionix.com/v2/search/item`, searchHeaders)
 	const item = await axios.get(`https://trackapi.nutritionix.com/v2/search/item?upc=${body.upc}`, searchHeaders).catch(e => console.log(e))
 	console.log(item.data)//.data.hints[0])
+	console.log(item.data.foods[0].full_nutrients)
 	/*const foodJSON = {
   		'ingredients': [
     	{
